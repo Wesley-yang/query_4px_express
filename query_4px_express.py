@@ -11,8 +11,6 @@ from twilio.rest import Client
 
 from Secrets import SECRETS
 
-SECRETS['']['']
-
 
 tracker = trackingmoreclass.track
 result = ""
