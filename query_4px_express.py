@@ -56,7 +56,7 @@ def real_time():
     requestData = "{\"tracking_number\": \"DD190411288998\",\"carrier_code\":\"4px\",\"destination_code\":\"CN\",\"tracking_ship_date\": \"\",\"tracking_postal_code\":\"\",\"specialNumberDestination\":\"\",\"order\":\"\",\"order_create_time\":\"\",\"lang\":\"cn\"}"
     result = tracker.trackingmore(requestData, urlStr, "realtime")
     decode_str = result.decode()
-    express_infos = ""
+    express_infos, express_email = "", ""
     if json.loads(decode_str)['meta']['code'] == 429:
         return("API请求过快，请二十分钟后再试!!!")
     elif json.loads(decode_str)['meta']['code'] == 200 and json.loads(decode_str)['meta']['type'] == 'Success' and json.loads(decode_str)['meta']['message'] == 'Success':
